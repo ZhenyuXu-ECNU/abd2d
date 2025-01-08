@@ -8,7 +8,7 @@ class Gui:
         self.screen = pygame.display.set_mode(resolution)
         self.resolution = np.array(resolution)
         self.offset = self.resolution / 2
-        self.scale = 200
+        self.scale = 50
         self.running = True
 
     def gui_event_handler(self, event):
