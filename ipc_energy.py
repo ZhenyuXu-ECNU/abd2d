@@ -96,6 +96,10 @@ class TotalIpc:
 
     @staticmethod
     def search_dir(body):
+
+        if not body.is_dynamic:  # for sticky objects, just return 0s because of sticky Dirichlet boundary condition
+            return np.array([0., 0., 0., 0., 0., 0.])
+
         H_body = csr_matrix(OrthogonalEnergy.hess(body) + InertiaEnergy.hess(body))
         grad = OrthogonalEnergy.grad(body) + InertiaEnergy.grad(body)
         return spsolve(H_body, -grad)
