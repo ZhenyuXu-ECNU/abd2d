@@ -7,4 +7,3 @@ def subtract_mean(*args):
     for arg in args:
         arg -= mean
 
-
